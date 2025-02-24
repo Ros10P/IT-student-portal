@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">IT Student Portal</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#form">Form</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Welcome to the IT Student Portal</h1>
+            <p>Your one-stop solution for all IT student needs</p>
+            <a href="#form" class="cta-button">Get Started</a>
+        </section>
+
+        <section id="form" class="form-section">
+            <h2>Dynamic IT Student Form</h2>
+            <form id="dynamicForm">
+                <div class="form-group">
+                    <label for="formPurpose">Select Form Purpose:</label>
+                    <select id="formPurpose" required>
+                        <option value="">-- Select Purpose --</option>
+                        <option value="project">Project Submission</option>
+                        <option value="internship">Internship Application</option>
+                        <option value="course">Course Registration</option>
+                        <option value="support">Technical Support Request</option>
+                    </select>
+                </div>
+                <div id="dynamicFields"></div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing IT students with the tools they need to succeed in their academic and professional journeys.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 IT Student Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    :root {
+  --primary-bg: #1a1a2e;
+  --secondary-bg: #16213e;
+  --accent-color: #0f3460;
+  --text-color: #e94560;
+  --light-text: #f1f1f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: var(--light-text);
+  background-color: var(--primary-bg);
+}
+
+header {
+  background-color: var(--secondary-bg);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+
+nav ul li a {
+  color: var(--light-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--text-color);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/placeholder.svg?height=1080&width=1920");
+  background-size: cover;
+  background-position: center;
+  color: var(--light-text);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--text-color);
+  color: var(--light-text);
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-color);
+}
+
+.form-section,
+.about-section {
+  background-color: var(--secondary-bg);
+  padding: 3rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+}
+
+h2 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+input,
+select,
+textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  background-color: var(--primary-bg);
+  color: var(--light-text);
+}
+
+.submit-button {
+  background-color: var(--text-color);
+  color: var(--light-text);
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--accent-color);
+}
+
+footer {
+  background-color: var(--secondary-bg);
+  color: var(--light-text);
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    margin-top: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .form-section,
+  .about-section {
+    padding: 2rem;
+  }
+}
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const formPurpose = document.getElementById("formPurpose")
+  const dynamicFields = document.getElementById("dynamicFields")
+  const form = document.getElementById("dynamicForm")
+
+  const formFields = {
+    project: [
+      { type: "text", name: "projectTitle", label: "Project Title" },
+      { type: "textarea", name: "projectDescription", label: "Project Description" },
+      { type: "date", name: "submissionDate", label: "Submission Date" },
+    ],
+    internship: [
+      { type: "text", name: "companyName", label: "Company Name" },
+      { type: "text", name: "position", label: "Position" },
+      { type: "date", name: "applicationDeadline", label: "Application Deadline" },
+    ],
+    course: [
+      { type: "text", name: "courseName", label: "Course Name" },
+      { type: "text", name: "instructor", label: "Instructor" },
+      { type: "number", name: "credits", label: "Credits" },
+    ],
+    support: [
+      { type: "text", name: "issueTitle", label: "Issue Title" },
+      { type: "textarea", name: "issueDescription", label: "Issue Description" },
+      { type: "select", name: "priority", label: "Priority", options: ["Low", "Medium", "High"] },
+    ],
+  }
+
+  formPurpose.addEventListener("change", updateForm)
+  form.addEventListener("submit", handleSubmit)
+
+  function updateForm() {
+    const purpose = formPurpose.value
+    dynamicFields.innerHTML = ""
+
+    if (purpose && formFields[purpose]) {
+      formFields[purpose].forEach((field) => {
+        const fieldContainer = document.createElement("div")
+        fieldContainer.className = "form-group"
+
+        const label = document.createElement("label")
+        label.textContent = field.label
+        label.setAttribute("for", field.name)
+
+        let input
+        if (field.type === "textarea") {
+          input = document.createElement("textarea")
+        } else if (field.type === "select") {
+          input = document.createElement("select")
+          field.options.forEach((option) => {
+            const optionElement = document.createElement("option")
+            optionElement.value = option.toLowerCase()
+            optionElement.textContent = option
+            input.appendChild(optionElement)
+          })
+        } else {
+          input = document.createElement("input")
+          input.type = field.type
+        }
+        input.id = field.name
+        input.name = field.name
+        input.required = true
+
+        fieldContainer.appendChild(label)
+        fieldContainer.appendChild(input)
+        dynamicFields.appendChild(fieldContainer)
+      })
+    }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData.entries())
+
+    // Here you would typically send the data to a server
+    console.log("Form submitted with data:", data)
+
+    // For demonstration, we'll show an alert
+    alert("Form submitted successfully!")
+    form.reset()
+    dynamicFields.innerHTML = ""
+  }
+})
+</script>
